@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="김개발 - Fullstack Developer 웹 이력서">
+    <meta property="og:title" content="김개발 - 개발자 이력서">
+    <meta property="og:description" content="사용자 중심의 웹 애플리케이션을 만드는 개발자입니다.">
+
+    <title>김개발 - Fullstack Developer</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="scroll-smooth bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white dark:bg-lightDark shadow-md z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Dev Portfolio
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 desktop-nav">
+                    <a href="#home" class="hover:text-primary transition-colors">홈</a>
+                    <a href="#about" class="hover:text-primary transition-colors">소개</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">기술</a>
+                    <a href="#experience" class="hover:text-primary transition-colors">경력</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">프로젝트</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">연락처</a>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <svg class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg class="block dark:hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l-2.12-2.12a1 1 0 111.414-1.414l2.12 2.12a1 1 0 11-1.414 1.414zM2.05 6.464a1 1 0 111.414-1.414l2.12 2.12a1 1 0 11-1.414 1.414L2.05 6.464zm12.12 0l2.12 2.12a1 1 0 11-1.414 1.414l-2.12-2.12a1 1 0 111.414-1.414zM2.05 13.536a1 1 0 111.414 1.414l-2.12 2.12a1 1 0 11-1.414-1.414l2.12-2.12zm9.88 0a1 1 0 111.414 1.414l2.12 2.12a1 1 0 11-1.414 1.414l-2.12-2.12a1 1 0 11-1.414-1.414zM3 10a1 1 0 112 0 1 1 0 11-2 0zm11 0a1 1 0 112 0 1 1 0 11-2 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
+                <a href="#home" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">홈</a>
+                <a href="#about" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">소개</a>
+                <a href="#skills" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">기술</a>
+                <a href="#experience" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">경력</a>
+                <a href="#projects" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">프로젝트</a>
+                <a href="#contact" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">연락처</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Profile Image -->
+                <div class="flex justify-center md:justify-start fade-in-up">
+                    <div class="w-64 h-64 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
+                        <div class="w-full h-full rounded-full bg-white dark:bg-lightDark overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="프로필 사진" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="fade-in-up">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4">
+                        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            김개발
+                        </span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-semibold">
+                        Fullstack Developer
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        사용자 중심의 웹 애플리케이션을 만드는 개발자입니다.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105">
+                            연락하기
+                        </a>
+                        <a href="#projects" class="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105">
+                            프로젝트 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <h2 class="text-4xl font-bold mb-12 text-center">소개</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        안녕하세요! 저는 김개발입니다. 5년 이상의 웹 개발 경험을 가지고 있으며,
+                        Frontend와 Backend를 모두 다룰 수 있는 Fullstack 개발자입니다.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        사용자 경험을 중시하는 개발 철학을 가지고 있으며,
+                        깔끔한 코드와 효율적인 시스템 구축을 목표로 합니다.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                        최신 기술 트렌드에 관심이 많아 지속적으로 학습하고 있습니다.
+                        팀 협업과 기술 공유를 중요하게 생각하며,
+                        함께 성장하는 개발 문화를 좋아합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto fade-in-up">
+            <h2 class="text-4xl font-bold mb-12 text-center">기술 스택</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                            HTML5
+                        </span>
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                            CSS3
+                        </span>
+                        <span class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm font-semibold">
+                            JavaScript
+                        </span>
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                            React
+                        </span>
+                        <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-semibold">
+                            Vue.js
+                        </span>
+                        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-semibold">
+                            TailwindCSS
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-secondary">Backend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-semibold">
+                            Node.js
+                        </span>
+                        <span class="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-semibold">
+                            Express
+                        </span>
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                            Python
+                        </span>
+                        <span class="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-semibold">
+                            Django
+                        </span>
+                        <span class="px-4 py-2 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded-full text-sm font-semibold">
+                            PostgreSQL
+                        </span>
+                        <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-semibold">
+                            MongoDB
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-accent">도구 & 기타</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm font-semibold">
+                            Git
+                        </span>
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                            Docker
+                        </span>
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-semibold">
+                            VS Code
+                        </span>
+                        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                            Figma
+                        </span>
+                        <span class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm font-semibold">
+                            Jest
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <h2 class="text-4xl font-bold mb-12 text-center">경력</h2>
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="border-l-4 border-primary pl-8 pb-8 relative">
+                    <div class="absolute w-4 h-4 bg-primary rounded-full -left-2.5 top-2"></div>
+                    <h3 class="text-2xl font-bold mb-1">ABC 스타트업</h3>
+                    <p class="text-primary font-semibold mb-2">Frontend Developer</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">2022.01 - 2023.12 (2년)</p>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>• React를 이용한 사용자 대시보드 개발</li>
+                        <li>• 페이지 성능 40% 개선</li>
+                        <li>• 팀 내 코드 리뷰 및 개발 문화 개선</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="border-l-4 border-secondary pl-8 pb-8 relative">
+                    <div class="absolute w-4 h-4 bg-secondary rounded-full -left-2.5 top-2"></div>
+                    <h3 class="text-2xl font-bold mb-1">XYZ 기술 회사</h3>
+                    <p class="text-secondary font-semibold mb-2">Fullstack Developer</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">2020.06 - 2021.12 (1년 7개월)</p>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>• Node.js 및 React를 활용한 웹 애플리케이션 개발</li>
+                        <li>• RESTful API 설계 및 구현</li>
+                        <li>• MongoDB 데이터베이스 최적화</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto fade-in-up">
+            <h2 class="text-4xl font-bold mb-12 text-center">프로젝트</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="group bg-white dark:bg-lightDark rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-4xl">
+                        💬
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">실시간 채팅 애플리케이션</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            WebSocket을 활용한 실시간 메시징 플랫폼입니다.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                                React
+                            </span>
+                            <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
+                                Node.js
+                            </span>
+                            <span class="text-xs bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full">
+                                Socket.io
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-primary hover:underline text-sm font-semibold">
+                                GitHub
+                            </a>
+                            <a href="#" class="text-secondary hover:underline text-sm font-semibold">
+                                데모
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="group bg-white dark:bg-lightDark rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white text-4xl">
+                        📊
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">데이터 분석 대시보드</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            실시간 데이터 시각화 및 분석 도구입니다.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                                Vue.js
+                            </span>
+                            <span class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">
+                                Chart.js
+                            </span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                                Django
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-primary hover:underline text-sm font-semibold">
+                                GitHub
+                            </a>
+                            <a href="#" class="text-secondary hover:underline text-sm font-semibold">
+                                데모
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="group bg-white dark:bg-lightDark rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                    <div class="w-full h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white text-4xl">
+                        🛒
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">전자상거래 플랫폼</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            풀스택 전자상거래 시스템입니다.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                                React
+                            </span>
+                            <span class="text-xs bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full">
+                                Express
+                            </span>
+                            <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
+                                MongoDB
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-primary hover:underline text-sm font-semibold">
+                                GitHub
+                            </a>
+                            <a href="#" class="text-secondary hover:underline text-sm font-semibold">
+                                데모
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <h2 class="text-4xl font-bold mb-12 text-center">학력</h2>
+            <div class="space-y-6">
+                <!-- Education 1 -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8 border-l-4 border-primary">
+                    <h3 class="text-2xl font-bold mb-2">OO대학교</h3>
+                    <p class="text-primary font-semibold mb-1">컴퓨터공학 학사</p>
+                    <p class="text-gray-600 dark:text-gray-400">2018.03 - 2022.02</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto fade-in-up text-center">
+            <h2 class="text-4xl font-bold mb-8">연락처</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-12">
+                프로젝트나 협업에 관해 이야기하고 싶으신가요?
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Email -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="text-xl font-bold mb-2">이메일</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <a href="mailto:dev@example.com" class="text-primary hover:underline">
+                            dev@example.com
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Phone -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-2">전화</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <a href="tel:+82123456789" class="text-primary hover:underline">
+                            010-1234-5678
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Location -->
+                <div class="bg-white dark:bg-lightDark rounded-lg p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h3 class="text-xl font-bold mb-2">위치</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        서울, 대한민국
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                   class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2c5.523 0 10 4.477 10 10 0 4.42-2.865 8.17-6.839 9.49-.5.092-.682-.217-.682-.482 0-.237.009-.868.009-1.697-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.184.092-.923.35-1.544.638-1.897-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.447-1.270.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                   class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                    </svg>
+                </a>
+                <a href="https://blog.example.com" target="_blank" rel="noopener noreferrer"
+                   class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-2.86-3.49c-.3-.37-.87-.38-1.21-.04-.35.34-.36.91-.02 1.25l3.5 4.27c.29.35.75.56 1.23.56.48 0 .94-.21 1.23-.56l3.5-4.27c.34-.34.33-.91-.02-1.25-.34-.34-.91-.33-1.21.04z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <a href="mailto:dev@example.com" class="inline-block px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition-all transform hover:scale-105">
+                지금 연락하기
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="mb-2">© 2024 김개발. All rights reserved.</p>
+            <p class="text-gray-400">Built with ❤️ using HTML, CSS, JavaScript, and TailwindCSS</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
